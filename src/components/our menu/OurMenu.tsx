@@ -198,9 +198,6 @@ const OurMenu: React.FC = () => {
 
   return (
   <div>
-     <div>
-            <Navbar companyName={'Coffee Company'}/>
-        </div>
       <div className="menu-container">
       <section id="header" className={`menu-header ${isVisible.header ? 'visible' : ''}`}>
         <h1>Our Menu</h1>
@@ -315,7 +312,7 @@ const OurMenu: React.FC = () => {
         </div>
       </section>
     </div>
-    <Footer/>
+
   </div>
   );
 };

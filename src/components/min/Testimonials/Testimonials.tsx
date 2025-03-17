@@ -21,7 +21,7 @@ const testimonialData: Testimonial[] = [
     role: "Marketing Director",
     company: "TechVision Inc.",
     text: "Working with this team transformed our digital presence completely. The attention to detail and creative solutions provided exceeded our expectations. Highly recommended!",
-    avatar: "/api/placeholder/60/60",
+    avatar: "https://i.pinimg.com/474x/2d/4c/9c/2d4c9c5773e4cb91edbdf4fbec8520a6.jpg",
     rating: 5
   },
   {
@@ -30,7 +30,7 @@ const testimonialData: Testimonial[] = [
     role: "CEO",
     company: "InnovateTech",
     text: "Outstanding service and brilliant execution. They understand business needs and deliver solutions that actually drive results. We've seen a 40% increase in engagement since implementation.",
-    avatar: "/api/placeholder/60/60",
+    avatar: "https://i.pinimg.com/474x/2d/4c/9c/2d4c9c5773e4cb91edbdf4fbec8520a6.jpg",
     rating: 5
   },
   {
@@ -39,7 +39,7 @@ const testimonialData: Testimonial[] = [
     role: "Operations Manager",
     company: "GlobalSystems",
     text: "The team's professionalism and technical expertise are unmatched. They delivered on time and within budget, while maintaining exceptional quality throughout the project.",
-    avatar: "/api/placeholder/60/60",
+    avatar: "https://i.pinimg.com/474x/2d/4c/9c/2d4c9c5773e4cb91edbdf4fbec8520a6.jpg",
     rating: 4
   },
   {
@@ -48,7 +48,7 @@ const testimonialData: Testimonial[] = [
     role: "Product Owner",
     company: "FutureSoft",
     text: "A true partner in our digital journey. Their collaborative approach and innovative thinking helped us overcome complex challenges and achieve our strategic goals.",
-    avatar: "/api/placeholder/60/60",
+    avatar: "https://i.pinimg.com/474x/2d/4c/9c/2d4c9c5773e4cb91edbdf4fbec8520a6.jpg",
     rating: 5
   }
 ];

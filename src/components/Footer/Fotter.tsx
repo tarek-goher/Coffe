@@ -1,6 +1,7 @@
 // Footer.tsx
 import React, { useState, useEffect } from 'react';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,11 +43,10 @@ const Footer: React.FC = () => {
           <div id="linksColumn">
             <h3 id="linksTitle">Quick Links</h3>
             <ul id="linksList">
-              <li id="linkItem1"><a href="#">Our Story</a></li>
-              <li id="linkItem2"><a href="#">Coffee Selection</a></li>
-              <li id="linkItem3"><a href="#">Brewing Guide</a></li>
-              <li id="linkItem4"><a href="#">Locations</a></li>
-              {/* <li id="linkItem5"><a href="#">Careers</a></li> */}
+              <li id="linkItem1"><Link to="/Ourstore ">Our Story</Link></li>
+              <li id="linkItem2"><Link to="/OurMenu">Coffee Selection</Link></li>
+              <li id="linkItem3"><Link to="#">Brewing Guide</Link></li>
+              <li id="linkItem4"><Link to="#">About US</Link></li>
             </ul>
           </div>
 
@@ -66,17 +66,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* <div id="socialBar">
-          <div id="socialTitle">Follow Us</div>
-          <div id="socialIcons">
-            <a href="#" id="facebookIcon" className="socialIcon"></a>
-            <a href="#" id="instagramIcon" className="socialIcon"></a>
-            <a href="#" id="twitterIcon" className="socialIcon"></a>
-            <a href="#" id="pinterestIcon" className="socialIcon"></a>
-          </div>
-        </div> */}
-
         <div id="footerBottom">
           <div id="footerNav">
             <a href="#" id="navItem1">Privacy Policy</a>

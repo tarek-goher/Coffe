@@ -7,6 +7,9 @@ import ContactPage from "./components/contactus/ContactUS";
 import Home from "./components/Home";
 // import Products from "./components/product/Product";
 import ScrollToTop from "./components/ScrollToTop";
+import Navbar from './components/Nav-bar/Nav';
+import Footer from './components/Footer/Fotter';
+import OrderPage from './components/Order/order';
 
 
 function App() {
@@ -14,14 +17,16 @@ function App() {
   return (
     <Router>
         <ScrollToTop /> 
-    {/* <Navbar companyName="Coffee Company" /> */}
+    <Navbar companyName="Coffee Company"  />
     <Routes>
       <Route path="*" element={< Home/>} />
       <Route path="/OurMenu" element={<OurMenu />} />
       {/* <Route path="/product" element={<Products />} /> */}
       <Route path="/Ourstore" element={<OurStory />} />
+      <Route path="/Order" element={<OrderPage />} />
       <Route path="/contactus" element={<ContactPage />} />
     </Routes>
+    <Footer/>
   </Router>
   );
 }

@@ -1,14 +1,16 @@
 // OurStory.tsx
 import React, { useEffect, useState } from 'react';
-import './OurStory.css';
-import Navbar from '../Nav-bar/Nav';
-import Footer from '../Footer/Fotter';
-// import storyImage1 from '../assets/coffee-farm.jpg';
-// import storyImage2 from '../assets/coffee-roasting.jpg';
-// import storyImage3 from '../assets/coffee-shop.jpg';
-// import founderImage from '../assets/founder.jpg';
+import './OurStory.css';;
+import { useNavigate } from 'react-router-dom';
+
 
 const OurStory: React.FC = () => {
+  const navigate = useNavigate();
+        
+
+  const handleButtonClick = (): void => {
+    navigate('/Order'); 
+  };
   const [isVisible, setIsVisible] = useState({
     header: false,
     section1: false,
@@ -20,6 +22,7 @@ const OurStory: React.FC = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
+
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -46,9 +49,7 @@ const OurStory: React.FC = () => {
 
   return (
     <div>
-         <div>
-            <Navbar companyName={'Coffee Company'}/>
-        </div>
+
         <div className="our-story-container">
       <section id="header" className={`story-header ${isVisible.header ? 'visible' : ''}`}>
         <h1>Our Story</h1>
@@ -191,12 +192,11 @@ const OurStory: React.FC = () => {
         <h2>Join Our Story</h2>
         <p>Visit one of our locations or shop online to experience the difference quality makes.</p>
         <div className="cta-buttons">
-          <button className="cta-button primary">Find a Store</button>
-          <button className="cta-button secondary">Shop Online</button>
+          <button onClick={handleButtonClick} className="cta-button primary">Shop Online</button>
+          {/* <button onClick={handleButtonClick} className="cta-button secondary">Shop Online</button> */}
         </div>
       </section>
     </div>
-    <Footer/>
     </div>
   );
 };

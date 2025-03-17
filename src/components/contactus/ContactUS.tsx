@@ -1,5 +1,6 @@
 // ContactPage.tsx
 import React, { useState, useEffect } from 'react';
+import styles from './ContactUS.module.css';
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
