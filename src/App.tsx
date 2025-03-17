@@ -1,11 +1,11 @@
 // import HeroSection from "./components/Hero/Hero";
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
 // import Navbar from "./components/Nav-bar/Nav";
 import OurStory from "./components/Ourstore/Ourstore";
 import OurMenu from "./components/our menu/OurMenu";
-// import ContactPage from "./components/contactus/ContactUS";
+import ContactPage from "./components/contactus/ContactUS";
 import Home from "./components/Home";
-import Products from "./components/product/Product";
+// import Products from "./components/product/Product";
 import ScrollToTop from "./components/ScrollToTop";
 
 
@@ -16,11 +16,11 @@ function App() {
         <ScrollToTop /> 
     {/* <Navbar companyName="Coffee Company" /> */}
     <Routes>
-      <Route path="/" element={< Home/>} />
+      <Route path="*" element={< Home/>} />
       <Route path="/OurMenu" element={<OurMenu />} />
       {/* <Route path="/product" element={<Products />} /> */}
       <Route path="/Ourstore" element={<OurStory />} />
-      {/* <Route path="/contactus" element={<ContactPage />} /> */}
+      <Route path="/contactus" element={<ContactPage />} />
     </Routes>
   </Router>
   );

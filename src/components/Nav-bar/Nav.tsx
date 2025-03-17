@@ -112,7 +112,7 @@ const Navbar: React.FC<NavbarProps> = ({ companyName }) => {
                 className={`nav-link ${activeLink === 'locations' ? 'active' : ''}`}
                 onClick={() => handleLinkClick('locations', '/locations')}
               >
-                <span className="nav-text">Locations</span>
+                <span className="nav-text">About US</span>
               </Link>
             </li>
             <li>
@@ -121,7 +121,7 @@ const Navbar: React.FC<NavbarProps> = ({ companyName }) => {
                 className={`nav-link ${activeLink === 'contact' ? 'active' : ''}`}
                 onClick={() => handleLinkClick('contact', '/contactus')}
               >
-                <span className="nav-text">Contact</span>
+                <span className="nav-text">Contact Us</span>
               </Link>
             </li>
             <li className="nav-cta">

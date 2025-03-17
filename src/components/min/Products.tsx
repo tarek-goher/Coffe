@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import './CoffeeProductsSection.css';
-
+import  './CoffeeProductsSection.css'
 // Define product type
 interface CoffeeProduct {
   id: number;

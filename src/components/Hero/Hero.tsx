@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './hero.css';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../Nav-bar/Nav';
+// import Navbar from '../Nav-bar/Nav';
 
 const HeroSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
