@@ -1,0 +1,540 @@
+/* nav.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-primary: #d4a45f;
+  --color-secondary: #8b5e34;
+  --color-dark: #1f1200;
+  --color-light: #ffffff;
+  --color-accent: #e8c08a;
+  --color-background: #0d0703;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-light);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(13, 7, 3, 0.9), rgba(13, 7, 3, 0.7));
+  backdrop-filter: blur(8px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.navbar.scrolled::before {
+  opacity: 1;
+}
+
+.coffee-beans-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path fill="%23d4a45f" fill-opacity="0.03" d="M20 0c-11 0-20 9-20 20s9 20 20 20 20-9 20-20-9-20-20-20zm0 36c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16z"/></svg>');
+  background-repeat: repeat;
+  z-index: -2;
+  opacity: 0.3;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo a:hover {
+  transform: scale(1.03);
+}
+
+.logo-text {
+  color: var(--color-primary);
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-left: 15px;
+  position: relative;
+  text-shadow: 0 0 15px rgba(212, 164, 95, 0.2);
+}
+
+.logo-text::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.navbar-logo a:hover .logo-text::after {
+  width: 100%;
+}
+
+/* Animated Coffee Cup */
+.logo-cup {
+  position: relative;
+  width: 40px;
+  height: 34px;
+}
+
+.cup-body {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: var(--color-primary);
+  border-radius: 4px 4px 12px 12px;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.cup-body::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--color-secondary);
+  top: 3px;
+  left: 3px;
+  border-radius: 2px 2px 10px 10px;
+}
+
+.cup-handle {
+  position: absolute;
+  width: 10px;
+  height: 16px;
+  border: 3px solid var(--color-primary);
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  right: 0;
+  bottom: 6px;
+}
+
+.cup-steam {
+  position: absolute;
+  top: -20px;
+  left: 8px;
+  width: 10px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cup-steam span {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-accent);
+  opacity: 0;
+  filter: blur(1px);
+  border-radius: 10px;
+  animation: steam 3s infinite;
+}
+
+.cup-steam span:nth-child(1) {
+  left: 0;
+  height: 15px;
+  animation-delay: 0.2s;
+}
+
+.cup-steam span:nth-child(2) {
+  left: 5px;
+  height: 18px;
+  animation-delay: 0.6s;
+}
+
+.cup-steam span:nth-child(3) {
+  left: 10px;
+  height: 12px;
+  animation-delay: 1s;
+}
+
+@keyframes steam {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px) scaleX(1.5);
+    opacity: 0.5;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-20px) scaleX(2);
+    opacity: 0;
+  }
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.nav-link {
+  color: var(--color-light);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 8px 0;
+  overflow: hidden;
+}
+
+.nav-text {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-link:hover .nav-text,
+.nav-link.active .nav-text {
+  color: var(--color-primary);
+}
+
+.nav-link.active {
+  font-weight: 600;
+}
+
+.order-button {
+  background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
+  color: var(--color-dark);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(212, 164, 95, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.order-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.4s ease;
+}
+
+.order-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(212, 164, 95, 0.4);
+}
+
+.order-button:hover::before {
+  left: 100%;
+}
+
+.order-text {
+  position: relative;
+  z-index: 1;
+}
+
+.order-icon {
+  margin-left: 10px;
+  position: relative;
+  z-index: 1;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-dark);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.order-button:hover .order-icon {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-icon .menu-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: all 0.4s ease;
+  border-radius: 2px;
+}
+
+.menu-line:nth-child(2) {
+  width: 80%;
+  align-self: flex-end;
+}
+
+.menu-icon:hover .menu-line:nth-child(2) {
+  width: 100%;
+}
+
+.menu-line.active:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+    width: 100%;
+  }
+  
+  .menu-line.active:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  
+  .menu-line.active:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+    width: 100%;
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 992px) {
+    .navbar-container {
+      padding: 0 20px;
+    }
+    
+    .navbar-links li {
+      margin: 0 10px;
+    }
+    
+    .logo-text {
+      font-size: 22px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .menu-icon {
+      display: flex;
+    }
+  
+    .navbar-right {
+      order: 2;
+    }
+  
+    .navbar.scrolled {
+      height: 70px;
+    }
+  
+    .navbar-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      height: 100vh;
+      background: linear-gradient(135deg, rgba(31, 18, 0, 0.98), rgba(13, 7, 3, 0.98));
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: right 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+    }
+  
+    .navbar-links::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><path fill="%23d4a45f" fill-opacity="0.02" d="M40 0c-22 0-40 18-40 40s18 40 40 40 40-18 40-40-18-40-40-40zm0 72c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z"/></svg>');
+      background-repeat: repeat;
+      z-index: -1;
+      opacity: 0.5;
+    }
+  
+    .navbar-links.active {
+      right: 0;
+    }
+  
+    .navbar-links li {
+      margin: 15px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+  
+    .navbar-links.active li {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    .navbar-links.active li:nth-child(1) { transition-delay: 0.2s; }
+    .navbar-links.active li:nth-child(2) { transition-delay: 0.3s; }
+    .navbar-links.active li:nth-child(3) { transition-delay: 0.4s; }
+    .navbar-links.active li:nth-child(4) { transition-delay: 0.5s; }
+    .navbar-links.active li:nth-child(5) { transition-delay: 0.6s; }
+    .navbar-links.active li:nth-child(6) { transition-delay: 0.7s; }
+  
+    .nav-link {
+      font-size: 18px;
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+      display: block;
+    }
+  
+    .nav-link::before {
+      width: 30px;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+    }
+  
+    .nav-link:hover::before,
+    .nav-link.active::before {
+      transform: translateX(-50%) scaleX(1);
+    }
+  
+    .nav-cta {
+      margin-top: 10px;
+    }
+  
+    .order-button {
+      margin-top: 15px;
+      padding: 12px 30px;
+    }
+  }
+  
+  /* Scroll Animation */
+  .navbar-container {
+    animation: fadeIn 0.8s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Coffee Bean Background Animation */
+  @keyframes float {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 40px 40px;
+    }
+  }
+  
+  .coffee-beans-bg {
+    animation: float 20s linear infinite;
+  }
+  
+  /* Enhanced Hover States */
+  .navbar-logo:hover .cup-steam span {
+    animation-duration: 2s;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    right: -5px;
+    bottom: 0;
+    background-color: var(--color-primary);
+    opacity: 0;
+    border-radius: 4px;
+    z-index: -1;
+    transform: scaleY(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    opacity: 0.05;
+    transform: scaleY(1);
+  }

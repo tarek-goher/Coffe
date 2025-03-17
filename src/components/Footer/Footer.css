@@ -1,0 +1,641 @@
+/* Footer.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-color: #6F4E37;
+  --secondary-color: #D4A76A;
+  --accent-color: #B87333;
+  --light-color: #F5F5F5;
+  --dark-color: #2C2C2C;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Main Footer Styles */
+#luxuryFooter {
+  position: relative;
+  width: 100%;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  padding-top: 100px;
+  margin-top: 100px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#luxuryFooter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#footerWave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  /* height: 100px; */
+  overflow: hidden;
+  line-height: 0;
+}
+
+#footerWave svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+#footerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Logo Section */
+#footerLogo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+#coffeeBeanIcon {
+  position: relative;
+  width: 40px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+#beanBody {
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  transform: rotate(15deg);
+}
+
+#beanLine {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 1px;
+  background-color: var(--dark-color);
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+
+#footerTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+/* Main Columns */
+#footerColumns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+#aboutColumn {
+  flex: 1 1 300px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+#aboutTitle, #linksTitle, #contactTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+  position: relative;
+}
+
+#aboutTitle::after, #linksTitle::after, #contactTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+#aboutText {
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #e0e0e0;
+}
+
+#subscribeBanner {
+  display: flex;
+  margin-top: 20px;
+}
+
+#emailInput {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+#emailInput::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#subscribeButton {
+  padding: 12px 20px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#subscribeButton:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Links Column */
+#linksColumn {
+  flex: 1 1 200px;
+  margin-bottom: 30px;
+}
+
+#linksList {
+  list-style: none;
+  padding: 0;
+}
+
+#linksList li {
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 20px;
+}
+
+#linksList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+}
+
+#linksList li a {
+  color: var(--light-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+#linksList li a:hover {
+  color: var(--secondary-color);
+  padding-left: 5px;
+}
+
+/* Contact Column */
+#contactColumn {
+  flex: 1 1 250px;
+  margin-bottom: 30px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#addressIcon, #phoneIcon, #emailIcon {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: relative;
+}
+
+#addressIcon::before, #phoneIcon::before, #emailIcon::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--secondary-color);
+}
+
+#addressIcon::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 6px 0 var(--secondary-color);
+}
+
+#phoneIcon::before {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#emailIcon::before {
+  width: 16px;
+  height: 10px;
+  border-radius: 1px;
+}
+
+#emailIcon::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 1px;
+  background-color: var(--primary-color);
+  transform: translate(-50%, -50%);
+}
+
+.contactItem p {
+  color: #e0e0e0;
+}
+
+/* Social Bar */
+#socialBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#socialTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
+
+#socialIcons {
+  display: flex;
+  gap: 20px;
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  position: relative;
+}
+
+.socialIcon:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-5px);
+}
+
+#facebookIcon::before, #instagramIcon::before, #twitterIcon::before, #pinterestIcon::before {
+  content: '';
+  position: absolute;
+  background-color: var(--dark-color);
+}
+
+#facebookIcon::before {
+  width: 8px;
+  height: 16px;
+  border-radius: 1px;
+}
+
+#instagramIcon::before {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+#instagramIcon::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid var(--dark-color);
+}
+
+#twitterIcon::before {
+  width: 16px;
+  height: 13px;
+  clip-path: path('M2,4 Q10,4 10,12 L18,2');
+}
+
+#pinterestIcon::before {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+/* Footer Bottom */
+#footerBottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+#footerNav {
+  display: flex;
+  gap: 20px;
+}
+
+#footerNav a {
+  color: var(--light-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+#footerNav a:hover {
+  color: var(--secondary-color);
+}
+
+#copyright {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+  }
+  
+  /* Coffee Cup Animation */
+  #coffeeAnimation {
+    position: relative;
+    width: 60px;
+    height: 60px;
+  }
+  
+  #coffeeMug {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    background-color: var(--secondary-color);
+    border-radius: 5px 5px 20px 20px;
+    bottom: 0;
+    left: 0;
+  }
+  
+  #coffeeMug::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    right: -15px;
+    top: 5px;
+  }
+  
+  #steamWrapper {
+    position: absolute;
+    left: 5px;
+    bottom: 30px;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .steam {
+    position: absolute;
+    background-color: rgba(212, 167, 106, 0.4);
+    border-radius: 10px;
+    bottom: 0;
+  }
+  
+  #steam1 {
+    width: 6px;
+    height: 0;
+    left: 2px;
+    animation: steamRise 3s infinite ease-out 0.2s;
+  }
+  
+  #steam2 {
+    width: 6px;
+    height: 0;
+    left: 12px;
+    animation: steamRise 3s infinite ease-out 0.6s;
+  }
+  
+  #steam3 {
+    width: 6px;
+    height: 0;
+    left: 22px;
+    animation: steamRise 3s infinite ease-out 1s;
+  }
+  
+  @keyframes steamRise {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    40% {
+      height: 20px;
+      opacity: 0.7;
+    }
+    100% {
+      height: 30px;
+      opacity: 0;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    #footerLogo {
+      margin-bottom: 30px;
+    }
+    
+    #footerColumns {
+      flex-direction: column;
+    }
+    
+    #aboutColumn, #linksColumn, #contactColumn {
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+    
+    #footerBottom {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+    
+    #footerNav {
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    
+    #coffeeAnimation {
+      margin: 20px auto 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #luxuryFooter {
+      padding-top: 80px;
+    }
+    
+    #footerTitle {
+      font-size: 1.8rem;
+    }
+    
+    #socialBar {
+      margin-bottom: 30px;
+    }
+    
+    #socialTitle {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    #footerWave {
+      top: -50px;
+      height: 50px;
+    }
+    
+    #footerWave svg {
+      height: 50px;
+    }
+    
+    #luxuryFooter {
+      padding-top: 60px;
+      margin-top: 60px;
+    }
+    
+    #footerLogo {
+      justify-content: center;
+    }
+    
+    #footerTitle {
+      font-size: 1.5rem;
+    }
+    
+    #aboutTitle, #linksTitle, #contactTitle {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    
+    #aboutTitle::after, #linksTitle::after, #contactTitle::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    #aboutText {
+      text-align: center;
+    }
+    
+    #linksList li {
+      text-align: center;
+      padding-left: 0;
+    }
+    
+    #linksList li::before {
+      display: none;
+    }
+    
+    .contactItem {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    #addressIcon, #phoneIcon, #emailIcon {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    
+    #footerNav {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
+  /* Hover Effects */
+  #subscribeButton {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #subscribeButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  #subscribeButton:hover::before {
+    width: 100%;
+  }
+  
+  /* Animation for links on hover */
+  #linksList li a {
+    position: relative;
+  }
+  
+  #linksList li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+  }
+  
+  #linksList li a:hover::after {
+    width: 100%;
+  }
+  
+  /* Page load animation */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  #footerLogo, #aboutColumn, #linksColumn, #contactColumn, #socialBar, #footerBottom {
+    animation: fadeUp 0.8s forwards;
+  }
+  
+  #linksColumn {
+    animation-delay: 0.2s;
+  }
+  
+  #contactColumn {
+    animation-delay: 0.4s;
+  }
+  
+  #socialBar {
+    animation-delay: 0.6s;
+  }
+  
+  #footerBottom {
+    animation-delay: 0.8s;
+  }
