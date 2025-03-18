@@ -384,19 +384,18 @@ body {
   .menuIcon {
     display: flex;
   }
-<<<<<<< Updated upstream:src/components/Nav-bar/nav.css
-  
+}
   @media screen and (max-width: 1095px) {
-    .navbar-container{
+    .navbarContainer{
       justify-content: space-between !important;
   
     }
-    .menu-icon {
+    .menuIcon {
       display: flex;
 
     }
   
-    .navbar-right {
+    .navbarRight {
       order: 2;
     }
   
@@ -404,7 +403,7 @@ body {
       height: 70px;
     }
   
-    .navbar-links {
+    .navbarLinks {
       position: fixed;
       top: 0;
       right: -100%;
@@ -420,7 +419,7 @@ body {
       box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
     }
   
-    .navbar-links::before {
+    .navbarLinks::before {
       content: '';
       position: absolute;
       top: 0;
@@ -433,30 +432,30 @@ body {
       opacity: 0.5;
     }
   
-    .navbar-links.active {
+    .navbarLinks.active {
       right: 0;
     }
   
-    .navbar-links li {
+    .navbarLinks li {
       margin: 15px 0;
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.5s ease;
     }
   
-    .navbar-links.active li {
+    .navbarLinks.active li {
       opacity: 1;
       transform: translateY(0);
     }
   
-    .navbar-links.active li:nth-child(1) { transition-delay: 0.2s; }
-    .navbar-links.active li:nth-child(2) { transition-delay: 0.3s; }
-    .navbar-links.active li:nth-child(3) { transition-delay: 0.4s; }
-    .navbar-links.active li:nth-child(4) { transition-delay: 0.5s; }
-    .navbar-links.active li:nth-child(5) { transition-delay: 0.6s; }
-    .navbar-links.active li:nth-child(6) { transition-delay: 0.7s; }
+    .navbarLinks.active li:nth-child(1) { transition-delay: 0.2s; }
+    .navbarLinks.active li:nth-child(2) { transition-delay: 0.3s; }
+    .navbarLinks.active li:nth-child(3) { transition-delay: 0.4s; }
+    .navbarLinks.active li:nth-child(4) { transition-delay: 0.5s; }
+    .navbarLinks.active li:nth-child(5) { transition-delay: 0.6s; }
+    .navbarLinks.active li:nth-child(6) { transition-delay: 0.7s; }
   
-    .nav-link {
+    .navLink {
       font-size: 18px;
       padding: 10px 0;
       width: 100%;
@@ -464,31 +463,30 @@ body {
       display: block;
     }
   
-    .nav-link::before {
+    .navLink::before {
       width: 30px;
       left: 50%;
       transform: translateX(-50%) scaleX(0);
       transform-origin: center;
     }
   
-    .nav-link:hover::before,
-    .nav-link.active::before {
+    .navLink:hover::before,
+    .navLink.active::before {
       transform: translateX(-50%) scaleX(1);
     }
   
-    .nav-cta {
+    .navCta {
       margin-top: 10px;
     }
   
-    .order-button {
+    .orderButton {
       margin-top: 15px;
       padding: 12px 30px;
     }
-=======
+
 
   .navbarRight {
     order: 2;
->>>>>>> Stashed changes:src/components/Nav-bar/nav.module.css
   }
 
   .navbar.scrolled {

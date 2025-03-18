@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-<<<<<<< Updated upstream
-import  './CoffeeProductsSection.css'
-=======
 import styles from './CoffeeProductsSection.module.css';
 
->>>>>>> Stashed changes
 // Define product type
 interface CoffeeProduct {
   id: number;

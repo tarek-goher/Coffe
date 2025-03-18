@@ -186,15 +186,9 @@ const OurMenu: React.FC = () => {
   }, []);
 
   return (
-<<<<<<< Updated upstream:src/components/our menu/OurMenu.tsx
-  <div>
-      <div className="menu-container">
-      <section id="header" className={`menu-header ${isVisible.header ? 'visible' : ''}`}>
-=======
     <div>
     <div className={styles.menuContainer}>
       <section id="header" className={`${styles.menuHeader} ${isVisible.header ? styles.visible : ''}` }>
->>>>>>> Stashed changes:src/pages/ourMenu/OurMenu.tsx
         <h1>Our Menu</h1>
         <p>Discover our handcrafted coffee and delicious food selections</p>
       </section>
@@ -307,10 +301,6 @@ const OurMenu: React.FC = () => {
         </div>
       </section>
     </div>
-<<<<<<< Updated upstream:src/components/our menu/OurMenu.tsx
-
-=======
->>>>>>> Stashed changes:src/pages/ourMenu/OurMenu.tsx
   </div>
   );
 };

@@ -1,14 +1,7 @@
 // HeroSection.tsx
-<<<<<<< Updated upstream
-import React, { useEffect, useState } from 'react';
-import './hero.css';
-import { useNavigate } from 'react-router-dom';
-// import Navbar from '../Nav-bar/Nav';
-=======
 import React, { useEffect, useState } from "react";
 import styles from "./hero.module.css";
 import { useNavigate } from "react-router-dom";
->>>>>>> Stashed changes
 
 const HeroSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

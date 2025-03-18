@@ -99,13 +99,8 @@ const Navbar: React.FC<NavbarProps> = ({ companyName }) => {
                 }
                 onClick={() => handleLinkClick("/locations")}
               >
-<<<<<<< Updated upstream
-                <span className="nav-text">About US</span>
-              </Link>
-=======
-                <span className={styles.navText}>Locations</span>
+                  <span className="nav-text">About US</span>
               </NavLink>
->>>>>>> Stashed changes
             </li>
             <li>
               <NavLink
@@ -115,13 +110,8 @@ const Navbar: React.FC<NavbarProps> = ({ companyName }) => {
                 }
                 onClick={() => handleLinkClick("/contact")}
               >
-<<<<<<< Updated upstream
                 <span className="nav-text">Contact Us</span>
-              </Link>
-=======
-                <span className={styles.navText}>Contact</span>
-              </NavLink>
->>>>>>> Stashed changes
+                </NavLink>
             </li>
             <li className={styles.navCta}>
               <Link to="/order" className={styles.orderButton}>
