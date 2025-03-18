@@ -28,9 +28,9 @@ const OurStory: React.FC = () => {
     );
 
     document.querySelectorAll("section[id]").forEach((section) => {
+      console.log("section")
       observer.observe(section);
     });
-
     return () => {
       document.querySelectorAll("section[id]").forEach((section) => {
         observer.unobserve(section);
@@ -42,7 +42,7 @@ const OurStory: React.FC = () => {
     <div>
       <div className={styles.ourStoryContainer}>
         <section
-          id={styles.header}
+          id="header"
           className={`${styles.storyHeader} ${
             isVisible.header ? styles.visible : ""
           }`}
@@ -52,7 +52,7 @@ const OurStory: React.FC = () => {
         </section>
 
         <section
-          id={styles.section1}
+          id="section1"
           className={`${styles.storySection} ${
             isVisible.section1 ? styles.visible : ""
           }`}
@@ -84,7 +84,7 @@ const OurStory: React.FC = () => {
         </section>
 
         <section
-          id={styles.section2}
+          id="section2"
           className={`${styles.storySection} ${styles.reverse} ${
             isVisible.section2 ? styles.visible : ""
           }`}
@@ -115,7 +115,7 @@ const OurStory: React.FC = () => {
         </section>
 
         <section
-          id={styles.section3}
+          id="section3"
           className={`${styles.storySection} ${
             isVisible.section3 ? styles.visible : ""
           }`}
@@ -146,7 +146,7 @@ const OurStory: React.FC = () => {
         </section>
 
         <section
-          id={styles.timeline}
+          id="timeline"
           className={`${styles.storyTimeline} ${
             isVisible.timeline ? styles.visible : ""
           }`}
@@ -213,7 +213,7 @@ const OurStory: React.FC = () => {
         </section>
 
         <section
-          id={styles.founder}
+          id="founder"
           className={`${styles.storyFounder} ${
             isVisible.founder ? styles.visible : ""
           }`}

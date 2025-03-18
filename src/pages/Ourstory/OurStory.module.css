@@ -1,9 +1,10 @@
 /* OurStory.css */
+
 .ourStoryContainer {
   max-width: 100%;
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
-  color: #333;
+  color: navLink333;
 }
 
 .storyHeader {
@@ -57,7 +58,7 @@
 
 .storySection.reverse {
   flex-direction: row-reverse;
-  background-color: #f9f9f9;
+  background-color: navLinkf9f9f9;
 }
 
 .storyContent {
@@ -70,7 +71,7 @@
 .storyContent h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #c8973f;
+  color: navLinkc8973f;
   font-weight: 600;
 }
 
@@ -97,7 +98,7 @@
 
 .storyTimeline {
   padding: 5rem 3rem;
-  background-color: #f2f2f2;
+  background-color: navLinkf2f2f2;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s ease, transform 1s ease;
@@ -112,7 +113,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #c8973f;
+  color: navLinkc8973f;
 }
 
 .timelineContainer {
@@ -127,7 +128,7 @@
   left: 50%;
   width: 2px;
   height: 100%;
-  background: #c8973f;
+  background: navLinkc8973f;
   transform: translateX(-50%);
 }
 
@@ -151,14 +152,14 @@
   left: 50%;
   width: 20px;
   height: 20px;
-  background: #c8973f;
+  background: navLinkc8973f;
   border-radius: 50%;
   transform: translateX(-50%);
   transition: background-color 0.3s ease;
 }
   
 .timelineItem:hover .timelineDot {
-  background: #9c7732;
+  background: navLink9c7732;
 }
 
 .timelineContent {
