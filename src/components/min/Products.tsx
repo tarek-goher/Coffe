@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
+<<<<<<< Updated upstream
 import  './CoffeeProductsSection.css'
+=======
+import styles from './CoffeeProductsSection.module.css';
+
+>>>>>>> Stashed changes
 // Define product type
 interface CoffeeProduct {
   id: number;
@@ -47,24 +52,24 @@ const CoffeeProductsSection: React.FC = () => {
     : coffeeProducts;
   
   return (
-    <div id="coffe_main_container">
-      <div id="coffe_header_section">
-        <div className="coffe_anim_title">
-          <h1 id="coffe_main_title">
-            <span className="coffe_icon"></span>
+    <div id={styles.coffeMainContainer}>
+      <div id={styles.coffeHeaderSection}>
+        <div className={styles.coffeAnimTitle}>
+          <h1 id={styles.coffeMainTitle}>
+            <span className={styles.coffeIcon}></span>
             Premium Coffee Collection
           </h1>
         </div>
         
-        <div className="coffe_anim_subtitle">
-          <h6 id="coffe_subtitle">
+        <div className={styles.coffeAnimSubtitle}>
+          <h6 id={styles.coffeSubtitle}>
             Discover our carefully selected coffee beans from around the world
           </h6>
         </div>
         
-        <div id="coffe_filter_section">
+        <div id={styles.coffeFilterSection}>
           <button 
-            className={`coffe_filter_btn ${filter === null ? "coffe_filter_active" : ""}`}
+            className={`${styles.coffeFilterBtn} ${filter === null ? styles.coffeFilterActive : ""}`}
             onClick={() => setFilter(null)}
           >
             All
@@ -72,7 +77,7 @@ const CoffeeProductsSection: React.FC = () => {
           {Array.from(new Set(coffeeProducts.map(p => p.roastLevel))).map(roast => (
             <button
               key={roast}
-              className={`coffe_filter_btn ${filter === roast ? "coffe_filter_active" : ""}`}
+              className={`${styles.coffeFilterBtn} ${filter === roast ? styles.coffeFilterActive : ""}`}
               onClick={() => setFilter(roast as string)}
               style={{ 
                 backgroundColor: filter === roast ? getRoastColor(roast as string) : 'transparent',
@@ -86,33 +91,33 @@ const CoffeeProductsSection: React.FC = () => {
         </div>
       </div>
       
-      <div id="coffe_products_grid">
+      <div id={styles.coffeProductsGrid}>
         {filteredProducts.map((product) => (
-          <div key={product.id} className="coffe_product_item">
-            <div className="coffe_product_card">
-              <div className="coffe_product_image_container">
+          <div key={product.id} className={styles.coffeProductItem}>
+            <div className={styles.coffeProductCard}>
+              <div className={styles.coffeProductImageContainer}>
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="coffe_product_image"
+                  className={styles.coffeProductImage}
                 />
                 {product.featured && (
-                  <span className="coffe_featured_badge">
+                  <span className={styles.coffeFeaturedBadge}>
                     Featured
                   </span>
                 )}
               </div>
               
-              <div className="coffe_product_content">
-                <div className="coffe_product_header">
-                  <h2 className="coffe_product_title">{product.name}</h2>
-                  <h6 className="coffe_product_price">${product.price}</h6>
+              <div className={styles.coffeProductContent}>
+                <div className={styles.coffeProductHeader}>
+                  <h2 className={styles.coffeProductTitle}>{product.name}</h2>
+                  <h6 className={styles.coffeProductPrice}>${product.price}</h6>
                 </div>
                 
-                <div className="coffe_product_tags_container">
-                  <span className="coffe_origin_tag">{product.origin}</span>
+                <div className={styles.coffeProductTagsContainer}>
+                  <span className={styles.coffeOriginTag}>{product.origin}</span>
                   <span 
-                    className="coffe_roast_tag"
+                    className={styles.coffeRoastTag}
                     style={{ 
                       backgroundColor: getRoastColor(product.roastLevel)
                     }}
@@ -121,39 +126,39 @@ const CoffeeProductsSection: React.FC = () => {
                   </span>
                 </div>
                 
-                <p className="coffe_product_description">{product.description}</p>
+                <p className={styles.coffeProductDescription}>{product.description}</p>
                 
-                <div className="coffe_special_tags">
+                <div className={styles.coffeSpecialTags}>
                   {product.tags.map(tag => (
-                    <span key={tag} className="coffe_special_tag">{tag}</span>
+                    <span key={tag} className={styles.coffeSpecialTag}>{tag}</span>
                   ))}
                 </div>
                 
-                <div className="coffe_rating_container">
-                  <div className="coffe_rating">
+                <div className={styles.coffeRatingContainer}>
+                  <div className={styles.coffeRating}>
                     {[...Array(5)].map((_, index) => (
                       <span 
                         key={index} 
-                        className={index < Math.floor(product.rating) ? "coffe_star_filled" : "coffe_star_empty"}
+                        className={index < Math.floor(product.rating) ? styles.coffeStarFilled : styles.coffeStarEmpty}
                       >
                         ★
                       </span>
                     ))}
                   </div>
-                  <span className="coffe_rating_value">({product.rating})</span>
+                  <span className={styles.coffeRatingValue}>({product.rating})</span>
                 </div>
               </div>
               
-              <div className="coffe_product_actions">
-                <button className="coffe_add_cart_btn">
-                  <span className="coffe_cart_icon"></span>
+              <div className={styles.coffeProductActions}>
+                <button className={styles.coffeAddCartBtn}>
+                  <span className={styles.coffeCartIcon}></span>
                   Add to Cart
                 </button>
                 <button
-                  className={`coffe_fav_btn ${favorites.includes(product.id) ? "coffe_fav_active" : ""}`}
+                  className={`${styles.coffeFavBtn} ${favorites.includes(product.id) ? styles.coffeFavActive : ""}`}
                   onClick={() => toggleFavorite(product.id)}
                 >
-                  <span className="coffe_heart_icon"></span>
+                  <span className={styles.coffeHeartIcon}></span>
                 </button>
               </div>
             </div>
@@ -161,6 +166,7 @@ const CoffeeProductsSection: React.FC = () => {
         ))}
       </div>
     </div>
+
   );
 };
 

@@ -1,0 +1,408 @@
+/* Main container styles */
+#coffeMainContainer {
+  width:  80%; /* قمت بتقليل العرض الأقصى */
+  margin: 0 auto;
+  padding: 40px 16px; /* قمت بتقليل الـ padding */
+}
+
+/* Header section styles */
+#coffeHeaderSection {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeIn 0.8s ease forwards; /* إضافة حركة مسيرة للسكشن بالكامل */
+}
+
+.coffeAnimTitle {
+  animation: fadeInDown 0.8s forwards;
+}
+
+.coffeAnimSubtitle {
+  animation: fadeIn 0.8s forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+#coffeMainTitle {
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  color: #5D4037;
+  font-size: 2.3rem; /* تقليل حجم الخط قليلاً */
+  margin-bottom: 12px;
+}
+
+.coffeIcon::before {
+  content: "☕";
+  font-size: 36px; /* تقليل حجم الأيقونة */
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+#coffeSubtitle {
+  font-size: 1.1rem; /* تقليل حجم الخط */
+  color: #666;
+  margin-bottom: 28px;
+}
+
+#coffeFilterSection {
+  margin-top: 28px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.6s forwards; /* إضافة حركة مسيرة لقسم الفلتر */
+}
+
+.coffeFilterBtn {
+  padding: 7px 14px; /* تقليل الـ padding */
+  border-radius: 18px;
+  border: 1px solid #a67c52;
+  background-color: transparent;
+  color: #a67c52;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.coffeFilterBtn:hover {
+  background-color: rgba(166, 124, 82, 0.1);
+  transform: translateY(-2px); /* إضافة حركة عند الـ hover */
+}
+
+.coffeFilterActive {
+  background-color: #a67c52;
+  color: white;
+}
+
+/* Products grid styles */
+#coffeProductsGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px; /* تقليل المسافة بين الكروت */
+  animation: staggerFadeIn 0.5s forwards;
+}
+
+@media (min-width: 600px) {
+  #coffeProductsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  #coffeProductsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  #coffeProductsGrid.smallCards {
+    grid-template-columns: repeat(4, 1fr); /* خيار لعرض 4 كروت في الشاشات الكبيرة */
+  }
+}
+
+.coffeProductItem {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+.coffeProductItem:nth-child(1) { animation-delay: 0.1s; }
+.coffeProductItem:nth-child(2) { animation-delay: 0.2s; }
+.coffeProductItem:nth-child(3) { animation-delay: 0.3s; }
+.coffeProductItem:nth-child(4) { animation-delay: 0.4s; }
+.coffeProductItem:nth-child(5) { animation-delay: 0.5s; }
+.coffeProductItem:nth-child(6) { animation-delay: 0.6s; }
+
+.coffeProductCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08); /* تقليل حجم الظل */
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  background-color: #fff;
+  max-width: 320px; /* تحديد عرض أقصى للكارد */
+  margin: 0 auto; /* توسيط الكارد */
+}
+
+.coffeProductCard:hover {
+  transform: translateY(-5px); /* تقليل مسافة الحركة عند الـ hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Product image styles */
+.coffeProductImageContainer {
+  position: relative;
+  height: 180px; /* تحديد ارتفاع ثابت للصورة */
+  overflow: hidden;
+}
+
+.coffeProductImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* تغطية كاملة للمساحة */
+  object-position: center; /* توسيط الصورة */
+  transition: transform 0.5s ease;
+}
+
+.coffeProductCard:hover .coffeProductImage {
+  transform: scale(1.05); /* تكبير الصورة عند الـ hover */
+}
+
+.coffeFeaturedBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #D4A762;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+  
+  /* Product content styles */
+  .coffeProductContent {
+    flex-grow: 1;
+    padding: 14px;
+  }
+  
+  .coffeProductHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .coffeProductTitle {
+    font-size: 1.1rem; /* تقليل حجم الخط */
+    font-weight: bold;
+    margin: 0;
+    transition: color 0.3s ease;
+  }
+  
+  .coffeProductCard:hover .coffeProductTitle {
+    color: #a67c52; /* تغيير لون العنوان عند الـ hover */
+  }
+  
+  .coffeProductPrice {
+    font-size: 1.1rem; /* تقليل حجم الخط */
+    color: #D4A762;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .coffeProductTagsContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .coffeOriginTag {
+    background-color: #f5f5f5;
+    padding: 3px 7px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    margin-right: 6px;
+  }
+  
+  .coffeRoastTag {
+    background-color: #a67c52;
+    color: white;
+    padding: 3px 7px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+  }
+  
+  .coffeProductDescription {
+    color: #666;
+    margin-bottom: 12px;
+    min-height: 3.6rem;
+    font-size: 0.9rem; /* تقليل حجم الخط */
+    line-height: 1.4;
+  }
+  
+  .coffeSpecialTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  
+  .coffeSpecialTag {
+    border: 1px solid #D4A762;
+    color: #D4A762;
+    padding: 3px 7px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+  }
+  
+  .coffeRatingContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .coffeRating {
+    display: flex;
+  }
+  
+  .coffeStarFilled {
+    color: #D4A762;
+    font-size: 0.9rem;
+  }
+  
+  .coffeStarEmpty {
+    color: #ccc;
+    font-size: 0.9rem;
+  }
+  
+  .coffeRatingValue {
+    color: #666;
+    font-size: 0.8rem;
+    margin-left: 6px;
+  }
+  
+  /* Product actions styles */
+  .coffeProductActions {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  .coffeAddCartBtn {
+    background-color: #5D4037;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 7px 14px;
+    flex: 1;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .coffeAddCartBtn:hover {
+    background-color: #3E2723;
+    transform: translateY(-2px); /* إضافة حركة عند الـ hover */
+  }
+  
+  .coffeCartIcon::before {
+    content: "🛒";
+    margin-right: 6px;
+  }
+
+  
+  .coffeeFavBtn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  
+  .coffeeFavActive {
+    border-color: #D32F2F;
+  }
+  
+  .coffeeHeartIcon::before {
+    content: "♡";
+    font-size: 1.3rem;
+    color: #666;
+  }
+  
+  .coffeeFavActive .coffeeHeartIcon::before {
+    content: "♥";
+    color: #D32F2F;
+  }
+  
+  /* إضافة حركات مسيرة جديدة للسكشن */
+  .coffeeSectionFade {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  .coffeeSectionSlideUp {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  /* Animation keyframes */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes staggerFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* إضافة حركة مسيرة جديدة - ظهور تدريجي من اليمين */
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* إضافة حركة مسيرة جديدة - نبضة */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* تطبيق حركة النبضة على الأزرار */
+  .coffeeFilterBtn:hover {
+    animation: pulse 1s infinite;
+  }

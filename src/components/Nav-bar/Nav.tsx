@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import './nav.css';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import styles from "./nav.module.css";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 
 interface NavbarProps {
   companyName: string;
@@ -9,9 +9,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ companyName }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('home');
   const navigate = useNavigate();
-  const location = useLocation(); // لالتقاط المسار الحالي
 
   useEffect(() => {
     // عند التمرير للأسفل أو للأعلى في الصفحة
@@ -23,120 +21,121 @@ const Navbar: React.FC<NavbarProps> = ({ companyName }) => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  useEffect(() => {
-    // تحديث الرابط النشط بناءً على المسار الحالي
-    const path = location.pathname;
-    if (path === '/') {
-      setActiveLink('home');
-    } else if (path === '/OurMenu') {
-      setActiveLink('menu');
-    } else if (path === '/Ourstore') {
-      setActiveLink('coffee');
-    } else if (path === '/locations') {
-      setActiveLink('locations');
-    } else if (path === '/contactus') {
-      setActiveLink('contact');
-    } else {
-      setActiveLink('');
-    }
-  }, [location]); // سيُنفذ هذا الكود كلما تغير المسار
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleLinkClick = (linkName: string, path: string) => {
-    setActiveLink(linkName);
+  const handleLinkClick = (path: string) => {
     setIsMenuOpen(false);
     navigate(path); // التنقل باستخدام navigate
   };
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="coffee-beans-bg"></div>
-      <div className="navbar-container">
-        <div className="navbar-logo">
-          <Link to="/" onClick={() => handleLinkClick('home', '/')}>
-            <div className="logo-cup">
-              <div className="cup-body">
-                <div className="cup-steam">
+    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""}`}>
+      <div className={styles.coffeeBeansBg}></div>
+      <div className="container mx-auto">
+        <div className={styles.navbarLogo}>
+          <Link to="/" onClick={() => handleLinkClick("/")}>
+            <div className={styles.logoCup}>
+              <div className={styles.cupBody}>
+                <div className={styles.cupSteam}>
                   <span></span>
                   <span></span>
                   <span></span>
                 </div>
               </div>
-              <div className="cup-handle"></div>
+              <div className={styles.cupHandle}></div>
             </div>
-            <span className="logo-text">{companyName}</span>
+            <span className={styles.logoText}>{companyName}</span>
           </Link>
         </div>
 
-        <div className="navbar-right">
-          <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
+        <div className={`${styles.navbarRight} md:block! hidden!`}>
+          <ul className={`${styles.navbarLinks} ${isMenuOpen ? "active" : ""}`}>
             <li>
-              <Link 
-                to="/" 
-                className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
-                onClick={() => handleLinkClick('home', '/')}
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `${styles.navLink} ${isActive ? styles.active : ""}`
+                }
+                onClick={() => handleLinkClick("/")}
               >
-                <span className="nav-text">Home</span>
-              </Link>
+                <span className={styles.navText}>Home</span>
+              </NavLink>
             </li>
             <li>
-              <Link 
-                to="/OurMenu" 
-                className={`nav-link ${activeLink === 'menu' ? 'active' : ''}`}
-                onClick={() => handleLinkClick('menu', '/OurMenu')}
+              <NavLink
+                to="/coffeselect"
+                className={({ isActive }) =>
+                  `${styles.navLink} ${isActive ? styles.active : ""}`
+                }
+                onClick={() => handleLinkClick("/coffeselect")}
               >
-                <span className="nav-text">Coffee Selection</span>
-              </Link>
+                <span className={styles.navText}>Coffee Selection</span>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/Ourstore" 
-                className={`nav-link ${activeLink === 'coffee' ? 'active' : ''}`}
-                onClick={() => handleLinkClick('coffee', '/Ourstore')}
+              <NavLink
+                to="/ourstory"
+                className={({ isActive }) =>
+                  `${styles.navLink} ${isActive ? styles.active : ""}`
+                }
+                onClick={() => handleLinkClick("/ourstory")}
               >
-                <span className="nav-text">Our Story</span>
-              </Link>
+                <span className={styles.navText}>Our Story</span>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/locations" 
-                className={`nav-link ${activeLink === 'locations' ? 'active' : ''}`}
-                onClick={() => handleLinkClick('locations', '/locations')}
+              <NavLink
+                to="/locations"
+                className={({ isActive }) =>
+                  `${styles.navLink} ${isActive ? styles.active : ""}`
+                }
+                onClick={() => handleLinkClick("/locations")}
               >
+<<<<<<< Updated upstream
                 <span className="nav-text">About US</span>
               </Link>
+=======
+                <span className={styles.navText}>Locations</span>
+              </NavLink>
+>>>>>>> Stashed changes
             </li>
             <li>
-              <Link
-                to="/contactus" 
-                className={`nav-link ${activeLink === 'contact' ? 'active' : ''}`}
-                onClick={() => handleLinkClick('contact', '/contactus')}
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `${styles.navLink} ${isActive ? styles.active : ""}`
+                }
+                onClick={() => handleLinkClick("/contact")}
               >
+<<<<<<< Updated upstream
                 <span className="nav-text">Contact Us</span>
               </Link>
+=======
+                <span className={styles.navText}>Contact</span>
+              </NavLink>
+>>>>>>> Stashed changes
             </li>
-            <li className="nav-cta">
-              <Link to="/order" className="order-button">
-                <span className="order-text">Order Now</span>
-                <span className="order-icon"></span>
+            <li className={styles.navCta}>
+              <Link to="/order" className={styles.orderButton}>
+                <span className={styles.orderText}>Order Now</span>
+                <span className={styles.orderIcon}></span>
               </Link>
             </li>
           </ul>
         </div>
 
-        <div className="menu-icon" onClick={toggleMenu}>
-          <div className={`menu-line ${isMenuOpen ? 'active' : ''}`}></div>
-          <div className={`menu-line ${isMenuOpen ? 'active' : ''}`}></div>
-          <div className={`menu-line ${isMenuOpen ? 'active' : ''}`}></div>
+        <div className={styles.menuIcon} onClick={toggleMenu}>
+          <div className={`${styles.menuLine} ${isMenuOpen ? styles.active : ""}`}></div>
+          <div className={`${styles.menuLine} ${isMenuOpen ? styles.active : ""}`}></div>
+          <div className={`${styles.menuLine} ${isMenuOpen ? styles.active : ""}`}></div>
         </div>
       </div>
     </nav>

@@ -1,0 +1,440 @@
+/* OurStory.css */
+.ourStoryContainer {
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.storyHeader {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/coffee-beans-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.storyHeader.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.storyHeader h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.storyHeader p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  font-weight: 300;
+}
+
+.storySection {
+  display: flex;
+  padding: 5rem 3rem;
+  gap: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.storySection.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.storySection.reverse {
+  flex-direction: row-reverse;
+  background-color: #f9f9f9;
+}
+
+.storyContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.storyContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #c8973f;
+  font-weight: 600;
+}
+
+.storyContent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.storyImage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.storyImage img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.storyTimeline {
+  padding: 5rem 3rem;
+  background-color: #f2f2f2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.storyTimeline.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.storyTimeline h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #c8973f;
+}
+
+.timelineContainer {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timelineContainer::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #c8973f;
+  transform: translateX(-50%);
+}
+
+.timelineItem {
+  width: 100%;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+.timelineItem:nth-child(even) {
+  padding-left: calc(50% + 30px);
+}
+
+.timelineItem:nth-child(odd) {
+  padding-right: calc(50% + 30px);
+  text-align: right;
+}
+
+.timelineDot {
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: #c8973f;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  transition: background-color 0.3s ease;
+}
+  
+.timelineItem:hover .timelineDot {
+  background: #9c7732;
+}
+
+.timelineContent {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.timelineContent h3 {
+  color: #c8973f;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.timelineContent p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.storyFounder {
+  display: flex;
+  padding: 5rem 3rem;
+  gap: 3rem;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.storyFounder.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.founderContent {
+  flex: 1;
+}
+
+.founderContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #c8973f;
+}
+
+.founderContent p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.founderName {
+  font-weight: 600;
+  font-style: normal !important;
+  color: #c8973f;
+}
+
+.founderImage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.founderImage img {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.storyValues {
+  padding: 5rem 3rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.storyValues h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #c8973f;
+}
+
+.valuesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.valueItem {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valueItem:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.valueIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.valueItem h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #c8973f;
+}
+
+.valueItem p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.storyCta {
+  padding: 5rem 3rem;
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/coffee-shop-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+  
+.storyCta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.storyCta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.ctaButton {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ctaButton.primary {
+  background-color: #c8973f;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(200, 151, 63, 0.5);
+}
+
+.ctaButton.primary:hover {
+  background-color: #d6a655;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(200, 151, 63, 0.7);
+}
+
+.ctaButton.secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.ctaButton.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 992px) {
+  .storyHeader h1 {
+    font-size: 3.5rem;
+  }
+  
+  .storyContent h2,
+  .storyTimeline h2,
+  .storyFounder h2,
+  .storyValues h2,
+  .storyCta h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .storySection {
+    flex-direction: column;
+    padding: 4rem 2rem;
+  }
+  
+  .storySection.reverse {
+    flex-direction: column;
+  }
+  
+  .storyHeader h1 {
+    font-size: 3rem;
+  }
+  
+  .storyHeader p {
+    font-size: 1.2rem;
+  }
+  
+  .timelineContainer::before {
+    left: 20px;
+  }
+  
+  .timelineItem:nth-child(even),
+  .timelineItem:nth-child(odd) {
+    padding-left: 50px;
+    padding-right: 0;
+    text-align: left;
+  }
+  
+  .timelineDot {
+    left: 20px;
+  }
+  
+  .storyFounder {
+    flex-direction: column-reverse;
+    padding: 4rem 2rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .storyHeader h1 {
+    font-size: 2.5rem;
+  }
+  
+  .storyHeader p {
+    font-size: 1rem;
+  }
+  
+  .storyContent h2,
+  .storyTimeline h2,
+  .storyFounder h2,
+  .storyValues h2,
+  .storyCta h2 {
+    font-size: 2rem;
+  }
+  
+  .storySection,
+  .storyFounder {
+    padding: 3rem 1.5rem;
+  }
+  
+  .storyTimeline,
+  .storyValues,
+  .storyCta {
+    padding: 3rem 1.5rem;
+  }
+}

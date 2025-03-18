@@ -1,0 +1,424 @@
+/* Footer.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
+
+#luxuryFooter {
+  position: relative;
+  color: #f8f0e6;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  max-height: 480px;
+}
+
+#luxuryFooter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#footerWave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#footerWave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: bottom;
+  animation: waveMove 20s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(1.05); }
+  100% { transform: scaleY(1); }
+}
+
+#footerContent {
+  padding: 3rem 5% 2rem;
+  background: linear-gradient(180deg, rgba(111, 78, 55, 0.95) 0%, rgba(58, 37, 25, 0.98) 100%);
+  backdrop-filter: blur(5px);
+}
+
+#footerLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+#coffeeBeanIcon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+#beanBody {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #f8d7a8;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform: rotate(45deg);
+  animation: beanPulse 3s infinite ease-in-out;
+}
+
+#beanLine {
+  position: absolute;
+  width: 60%;
+  height: 2px;
+  background: #6F4E37;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+@keyframes beanPulse {
+  0%, 100% { transform: rotate(45deg) scale(1); }
+  50% { transform: rotate(45deg) scale(1.1); }
+}
+
+#footerTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(45deg, #f8d7a8, #e6bc7e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#footerColumns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+#aboutColumn, #linksColumn, #contactColumn {
+  flex: 1;
+  min-width: 250px;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.2s;
+}
+
+#linksColumn {
+  animation-delay: 0.4s;
+}
+
+#contactColumn {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#aboutTitle, #linksTitle, #contactTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+#aboutTitle::after, #linksTitle::after, #contactTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f8d7a8;
+  animation: lineGrow 1s forwards;
+  animation-delay: 1s;
+}
+
+@keyframes lineGrow {
+  to { width: 100%; }
+}
+
+#aboutText {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+#subscribeBanner {
+  display: flex;
+  overflow: hidden;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+#subscribeBanner:hover {
+  transform: translateY(-3px);
+}
+
+#emailInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #f8f0e6;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+}
+
+#emailInput::placeholder {
+  color: rgba(248, 240, 230, 0.7);
+}
+
+#subscribeButton {
+  background: linear-gradient(45deg, #f8d7a8, #e6bc7e);
+  color: #6F4E37;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#subscribeButton:hover {
+  background: linear-gradient(45deg, #e6bc7e, #f8d7a8);
+  transform: scale(1.05);
+}
+
+#linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#linksList li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+#linksList li::before {
+  content: '☕';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.8rem;
+  color: #f8d7a8;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#linksList li:hover::before {
+  opacity: 1;
+}
+
+#linksList a {
+  color: #f8f0e6;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+#linksList a:hover {
+  color: #f8d7a8;
+  transform: translateX(5px);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.contactItem:hover {
+  transform: translateX(5px);
+}
+
+.contactItem div {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#addressIcon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f8d7a8' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E");
+}
+
+#phoneIcon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f8d7a8' viewBox='0 0 24 24'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E");
+}
+
+#emailIcon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f8d7a8' viewBox='0 0 24 24'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
+}
+
+#footerBottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(248, 240, 230, 0.2);
+}
+
+#footerNav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+#footerNav a {
+  color: #f8f0e6;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#footerNav a:hover {
+  opacity: 1;
+  color: #f8d7a8;
+}
+
+#copyright {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+#coffeeAnimation {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+#coffeeMug {
+  position: absolute;
+  width: 30px;
+  height: 24px;
+  bottom: 0;
+  left: 15px;
+  background: #f8d7a8;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 0 0 2px #6F4E37;
+}
+
+#coffeeMug::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #6F4E37;
+  border-radius: 50%;
+  right: -10px;
+  top: 5px;
+}
+
+#steamWrapper {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 24px;
+  left: 15px;
+  overflow: hidden;
+}
+
+.steam {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(248, 215, 168, 0.7);
+  border-radius: 50%;
+  bottom: 0;
+  opacity: 0;
+}
+
+#steam1 {
+  left: 4px;
+  animation: steamRise 3s infinite ease-out;
+  animation-delay: 0.2s;
+}
+
+#steam2 {
+  left: 11px;
+  animation: steamRise 3s infinite ease-out;
+  animation-delay: 0.6s;
+}
+
+#steam3 {
+  left: 18px;
+  animation: steamRise 3s infinite ease-out;
+  animation-delay: 1s;
+}
+
+@keyframes steamRise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(-20px) scale(1.5);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-30px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  #luxuryFooter {
+    max-height: none;
+  }
+  
+  #footerColumns {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  #footerLogo {
+    margin-bottom: 1.5rem;
+  }
+  
+  #footerBottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  #footerNav {
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  #coffeeAnimation {
+    margin: 1rem auto 0;
+  }
+}
